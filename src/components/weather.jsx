@@ -154,6 +154,10 @@ export default function Weather() {
           
           </div>
         </div>
+        <div className='mt-12 text-white flex justify-center'>
+        Copyright © 2023 . All rights reserved.
+
+        </div>
       </div>
     
   )
