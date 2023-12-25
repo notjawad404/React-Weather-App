@@ -31,6 +31,7 @@ export default function Weather() {
     }
 
     let data = await response.json();
+    console.log(data);
 
     const humidity = document.getElementsByClassName('humidity-percentage');
     const wind = document.getElementsByClassName('wind-speed');
@@ -38,6 +39,7 @@ export default function Weather() {
     const city = document.getElementsByClassName('weather-city');
     const icon = document.getElementsByClassName('weather-image');
     const status = document.getElementsByClassName('weather-status');
+    const description = document.getElementsByClassName('weather-description');
 
     const min_temp = document.getElementsByClassName('min-temp');
     const max_temp = document.getElementsByClassName('max-temp');
@@ -49,6 +51,8 @@ export default function Weather() {
     status[0].innerHTML = data.weather[0].main;
     min_temp[0].innerHTML = data.main.temp_min + '°C';
     max_temp[0].innerHTML = data.main.temp_max + '°C';
+    description[0].innerHTML = data.weather[0].description;
+ 
 
     if (data.weather[0].main === 'Clouds') {
       icon[0].src = cloud_icon;
@@ -84,8 +88,11 @@ export default function Weather() {
           <img src={cloud_icon} alt='weather Image' className='weather-image  w-20 h-20' />
         </div>
 
-        <div className='weather-status mt-7 flex justify-center text-white text-lg font-normal'>
+        <div className='weather-status mt-7 flex justify-center text-white text-2xl font-normal'>
           status
+        </div>
+        <div className='weather-description flex justify-center text-white text-lg font-normal'>
+         Description
         </div>
 
         <div className='weather-temp mt-7 flex justify-center text-white  font-normal text-3xl'>
@@ -94,6 +101,7 @@ export default function Weather() {
         <div className='weather-city flex justify-center text-white text-3xl font-normal'>
           City
         </div>
+
         <div className='flex justify-center pt-4'>
           <div className='m-auto flex items-start gap-3 text-white'>
             <div className='text-3xl font-normal'>
@@ -142,9 +150,8 @@ export default function Weather() {
 
         </div>
       </div>
-      <div className='mt-12 text-white flex justify-center'>
+      <div className='mt-12 text-white flex justify-center bottom-8'>
         Copyright © 2023 . All rights reserved.
-
       </div>
     </div>
 
