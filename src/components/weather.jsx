@@ -31,7 +31,6 @@ export default function Weather() {
     }
 
     let data = await response.json();
-    console.log(data);
 
     const humidity = document.getElementsByClassName('humidity-percentage');
     const wind = document.getElementsByClassName('wind-speed');
