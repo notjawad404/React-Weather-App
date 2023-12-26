@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
 
+
 import search_icon from '../assets/search.png';
 import wind_icon from '../assets/wind.png';
 import humidity_icon from '../assets/humidity.png';
@@ -11,8 +12,8 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const ApiKey = '2cb6b07f4fc0a3d186c0fb2034a443f4';
-
+  const ApiKey = `${import.meta.env.VITE_AccessKey}`;
+  
   const getCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -33,7 +34,7 @@ const Weather = () => {
 
   const search = async () => {
     if (searchedLocation === '') {
-      alert('Please enter a city name or use current location.');
+      alert('Please enter a city.');
       return;
     }
 
@@ -54,7 +55,7 @@ const Weather = () => {
       let response = await fetch(url);
 
       if (!response.ok) {
-        alert('City not found. Please enter a valid city name.');
+        alert('City not found. Please enter a valid city');
         return;
       }
 
@@ -83,8 +84,8 @@ const Weather = () => {
             type='text'
             value={searchedLocation}
             onChange={(e) => setSearchedLocation(e.target.value)}
-            className='cityInput flex w-96 h-8 border-none outline-none rounded-3xl pl-10 text-gray-500 font-normal'
-            placeholder='Search for places or use current location'
+            className='cityInput flex w-96 h-8 border-none outline-none rounded-3xl px-5 text-gray-500 font-normal'
+            placeholder='Search City'
           />
           <div
             className='flex justify-center items-center bg-white w-8 h-8 bg-black-50 rounded-3xl cursor-pointer'
@@ -94,7 +95,7 @@ const Weather = () => {
           </div>
         </div>
 
-        {loading && <p>Loading...</p>}
+        {loading && <p className=' text-2xl text-white'>Loading...</p>}
 
         {weatherData && (
           <>
