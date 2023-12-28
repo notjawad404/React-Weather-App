@@ -7,6 +7,6 @@ I created this project using Vite so to run this app, first use the following co
 
 In this project, I used Open Weather API to fetch weather data for a city. I added necessary error handling such as showing a message if the user does not enter a city or enters an invalid city name.
 
-Link: https://react-weather-app-notjawad404.vercel.app/
+Link: https://react-weather-app-sable-delta.vercel.app
 
 <img src="./src/assets/weatherApp.png" alt="Weather App screen shot"/>
