@@ -12,6 +12,3 @@ Link: https://react-weather-app-sable-delta.vercel.app
 Project Video: 
 
 https://github.com/notjawad404/React-Weather-App/assets/106097383/8a280f72-200d-43e0-8238-89c9722b37db
-
-
-<img src="./src/assets/weatherApp.png" alt="Weather App screen shot"/>
